@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"crypto/sha256"
+	"fmt"
 )
 
 type Block struct {
@@ -56,4 +57,12 @@ func Genesis() *Block {
 func InitBlockChain() *BlockChain {
 	//return reference to new blockchain with genesis block
 	return &BlockChain{[]*Block{Genesis()}}
+}
+
+func (c *BlockChain) PrintBlockData() {
+	for _, block := range c.blocks {
+		fmt.Printf("Previous Hash: %x\n", block.PrevHash)
+		fmt.Printf("Data in Block: %s\n", block.Data)
+		fmt.Printf("Hash: %x\n", block.Hash)
+	}
 }
