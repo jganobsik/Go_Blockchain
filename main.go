@@ -41,6 +41,14 @@ func (c *BlockChain) AddBlock(data string) {
 	c.blocks = append(c.blocks, new)
 }
 
+// create the first block
 func Genesis() *Block {
+	//call function creating first block
 	return CreateBlock("genesis", []byte{})
+}
+
+// initialize blockchain
+func InitBlockChain() *BlockChain {
+	//return reference to new blockchain with genesis block
+	return &BlockChain{[]*Block{Genesis()}}
 }
