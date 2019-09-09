@@ -28,5 +28,15 @@ func (b *Block) DeriveHash() {
 func CreateBlock(data string, prevHash []byte) *Block {
 	block := &Block{[]byte{}, []byte(data), prevHash}
 	block.DeriveHash()
+	//return value is new block
 	return block
+}
+
+func (c *BlockChain) AddBlock(data string) {
+	//get last block in chain
+	prevBlock := c.blocks[len(c.blocks)-1]
+	//create new block
+	new := CreateBlock(data, prevBlock.hash)
+	//add new block to chain
+	c.blocks = append(c.blocks, new)
 }
