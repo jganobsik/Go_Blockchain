@@ -10,6 +10,9 @@ type Block struct {
 	Data     []byte
 	PrevHash []byte
 }
+type BlockChain struct {
+	blocks []*Block
+}
 
 func main() {
 }
