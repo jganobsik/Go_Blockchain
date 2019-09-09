@@ -40,3 +40,7 @@ func (c *BlockChain) AddBlock(data string) {
 	//add new block to chain
 	c.blocks = append(c.blocks, new)
 }
+
+func Genesis() *Block {
+	return CreateBlock("genesis", []byte{})
+}
