@@ -15,6 +15,11 @@ type BlockChain struct {
 }
 
 func main() {
+	//create new blockchain
+	chain := InitBlockChain()
+	//add blocks via chain.AddBlock("message")
+	//example block creation
+	chain.AddBlock("First New Block In Chain")
 }
 
 //hash block
