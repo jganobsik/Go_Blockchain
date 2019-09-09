@@ -42,7 +42,7 @@ func (c *BlockChain) AddBlock(data string) {
 	//get last block in chain
 	prevBlock := c.blocks[len(c.blocks)-1]
 	//create new block
-	new := CreateBlock(data, prevBlock.hash)
+	new := CreateBlock(data, prevBlock.Hash)
 	//add new block to chain
 	c.blocks = append(c.blocks, new)
 }
