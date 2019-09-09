@@ -21,6 +21,9 @@ func main() {
 	//add blocks via chain.AddBlock("message")
 	//example block creation
 	chain.AddBlock("First New Block In Chain")
+	chain.AddBlock("Second New Block In Chain")
+	chain.AddBlock("Third New Block In Chain")
+	chain.PrintBlockData()
 }
 
 //hash block
@@ -59,6 +62,7 @@ func InitBlockChain() *BlockChain {
 	return &BlockChain{[]*Block{Genesis()}}
 }
 
+//loop through all blocks in chain and print data and hashes for each block
 func (c *BlockChain) PrintBlockData() {
 	for _, block := range c.blocks {
 		fmt.Printf("Previous Hash: %x\n", block.PrevHash)
